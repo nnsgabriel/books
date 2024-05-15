@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Notes</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+
+    <body>
+        <div class="main_container">
+            <h1>(The Few) Books I've Read</h1>
+            <p class="main_description">
+                Hi! I'm Gabriel. I'm not an avid reader but here are some books that I managed to read. 
+                They were quite enjoyable. You can check them out online using their names, ISBN code or the provided links.<br />
+                <br />
+                Sort by <a href="/title">title</a>, <a href="/rating">rating</a> or <a href="/newest">newest</a>.
+            </p>
+            <hr />
+
+            <!-- Upload it to github. -->
+
+            <% books.forEach(book => { %>
+                <div class="book">
+                    <p class="hidden"><%= book.id %></p>
+                    <img class="item item1" src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg" />
+                    <div class="item item2">
+                        <h2 class="book_title"><%= book.title %></h2>
+                        <p class="book_author">by <%= book.author %></p>
+                    </div>
+                    <p class="item item3 muted_text">ISBN: <%= book.isbn %></p>
+                    <p class="item item4 muted_text">READ IN: <%= book.date_read.toLocaleDateString() %></p>
+                    <p class="item item5 muted_text">MY SCORE: <%= book.my_score %>/10</p>
+                    <p class="item item6"><a href="<%= book.bookstore_link %>">Amazon</a></p>
+                    <p class="item item7"><%= book.description %></p>
+                    <div class="button_container">
+                        <form class="form edit_form" action="/edit/<%= book.id %>" method="POST">
+                            <input class="hidden" name="bookId" value="<%= book.id %>">
+                            <button class="button editButton item item8" type="submit">Edit</button>
+                        </form>
+                        <form class="form delete_form" action="/delete/<%= book.id %>" method="POST">
+                            <input class="hidden" name="bookId" value="<%= book.id %>">
+                            <button class="button backButton item item9" type="submit">Delete</button>
+                        </form>
+                    </div>
+                </div>
+                
+                
+            <% }); %>
+
+            <button class="button"><a class="link_decoration_none" href="/new">Add New Book</a></button>
+            
+        </div>
+    </body>
+</html>

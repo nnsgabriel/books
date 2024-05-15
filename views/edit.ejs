@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add New Book</title>
+        <link rel="stylesheet" href="/styles/main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main_container">
+            <h1>Edit Book</h1>
+            <div class="new_book_container">
+                <form action="/update" method="POST">
+                    <input id="editBookId" name="editBookId" class="newInput hidden" type="text" value="<%= book.id %>">
+                    <label for="editBookTitle" class="editLabel">Book Title</label><br />
+                    <input id="editBookTitle" class="newInput newInput1" name="editBookTitle" type="text" value="<%= book.title %>" placeholder="Book title"><br />
+                    <label for="editBookAuthor" class="editLabel">Book Author</label><br />
+                    <input id="editBookAuthor" class="newInput newInput2" name="editBookAuthor" type="text" value="<%= book.author %>" placeholder="Book author"><br />
+                    <label for="editBookIsbn" class="editLabel">ISBN</label><br />
+                    <input id="editBookIsbn" class="newInput newInput3" name="editBookIsbn" type="text" value="<%= book.isbn %>" placeholder="ISBN"><br />
+                    <label for="editBookDateRead" class="editLabel">Date Read</label><br />
+                    <input required id="editBookDateRead" class="newInput newInput4" name="editBookDateRead" type="text" value="<%= book.date_read.toLocaleDateString() %>" placeholder="Date read" onfocus="(this.type='date')"><br />
+                    <label for="editBookScore" class="editLabel">My Score</label><br />
+                    <input id="editBookScore" class="newInput newInput5" name="editBookScore" type="text" value="<%= book.my_score %>" placeholder="Your Score 0-10"><br />
+                    <label for="editBookLink" class="editLabel">Amazon Link</label><br />
+                    <input id="editBookLink" class="newInput newInput6" name="editBookLink" type="text" value="<%= book.bookstore_link %>" placeholder="Bookstore Link"><br />
+                    <label for="editBookDescription" class="editLabel">Description</label><br />
+                    <textarea id="editBookDescription" name="editBookDescription" class="newInput newInput7" placeholder="Description"><%= book.description %></textarea><br />
+                    <button class="button addButton" type="submit">Save</button>
+                    <button class="button backButton"><a class="link_decoration_none" href="/">Back</a></button>
+                </form>
+            </div>
+        </div> 
+    </body>
+    <script>
+        var isbnInput = document.getElementById("editBookIsbn");
+        isbnInput.addEventListener('input', function() {
+            var isbnInputValue = isbnInput.value;
+            var isbnNumbersOnly = isbnInputValue.replace(/[^0-9]/g, '');
+            isbnInput.value = isbnNumbersOnly;
+        });
+    </script>
+</html>

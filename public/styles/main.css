@@ -1,0 +1,239 @@
+body {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main_container {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.main_description {
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+p { 
+    font-size: 1.2rem;
+}
+
+.book {
+    display: grid;
+    grid-template-columns: 21% 20% 20% 20% 20%;
+    grid-template-rows: 25% 17% 40% 10%;
+    margin: 30px 10px 50px 10px;
+}
+
+.book_title {
+    margin-bottom: 8px;
+}
+
+.book_author {
+    margin-top: 0;
+}
+
+.item {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.item1 {
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: left;
+    padding-left: 0px;
+}
+
+.item2 {
+    grid-column-start: 2;
+    grid-column-end: 6;
+}
+
+.item7 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 6;
+    padding-right: 50px;
+}
+
+.button_container {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    margin-top: 0;
+}
+
+button {
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    background-color: #008000;
+    color: white;
+    border: none;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+    margin: 20px 0 50px 0;
+}
+
+.item8, .item9 {
+    margin-top: 0;
+}
+
+button:hover {
+    background-color: hsl(120, 100%, 35%);
+    cursor: pointer;
+}
+
+.link_decoration_none {
+    text-decoration: none;
+    color: unset;
+}
+
+.muted_text {
+    color: hsl(0, 0%, 30%);
+}
+
+.newInput {
+    width: 50%;
+    padding: 10px 20px 10px 20px;
+    margin: 10px 0 30px 0;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+}
+
+.backButton {
+    background-color: #c1121f;
+}
+
+.backButton:hover {
+    background-color: hsl(356, 83%, 51%);
+}
+
+.newInput7 {
+    height: 20rem;
+    resize: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.editButton {
+    margin-bottom: 10px;
+}
+
+.editLabel {
+    font-weight: bold;
+}
+
+.button_container {
+    display: flex;
+    gap: 5px;
+}
+
+@media (max-width: 600px) {
+    .newInput {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1200px) {
+.book {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 240px auto 25px 25px 25px 40px auto 50px;
+    margin: 30px 10px 50px 10px;
+    grid-gap: 10px;
+}
+
+.item1 {
+    width: 9rem;
+    margin: auto;
+    margin-top: 0;
+}
+
+.item2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.item3 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin-top: 0;
+}
+
+.item4 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    margin-top: 0;
+}
+
+.item5 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    margin-top: 0;
+}
+
+.item6 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    margin-top: 0;
+}
+
+.item7 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 7;
+    grid-row-end: 8;
+    margin-top: 0;
+}
+
+.button_container {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 8;
+    grid-row-end: 9;
+    margin: auto;
+}
+
+.newInput {
+    width: 70%;
+}
+}
+
+@media (min-width: 1201px) and (max-width: 1600px) {
+.item1 {
+    width: 10rem;
+}
+}
+
+@media (min-width: 1601px) {
+
+}

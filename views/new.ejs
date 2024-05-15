@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add New Book</title>
+        <link rel="stylesheet" href="/styles/main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main_container">
+            <h1>Add New Book</h1>
+            <div class="new_book_container">
+                <form action="/add" method="POST">
+                    <input id="newBookTitle" class="newInput newInput1" name="newBookTitle" type="text" placeholder="Book title"><br />
+                    <input id="newBookAuthor" class="newInput newInput2" name="newBookAuthor" type="text" placeholder="Book author"><br />
+                    <input id="newBookIsbn" class="newInput newInput3" name="newBookIsbn" type="text" placeholder="ISBN"><br />
+                    <input required id="newBookDateRead" class="newInput newInput4" name="newBookDateRead" type="text" placeholder="Date read (approximately)" onfocus="(this.type='date')"><br />
+                    <input id="newBookScore" class="newInput newInput5" name="newBookScore" type="text" placeholder="Your Score 0-10"><br />
+                    <input id="newBookLink" class="newInput newInput6" name="newBookLink" type="text" placeholder="Bookstore Link"><br />
+                    <textarea id="newBookDescription" name="newBookDescription" class="newInput newInput7" placeholder="Description"></textarea><br />
+                    <button class="button addButton" type="submit">Add</button>
+                    <button class="button backButton"><a class="link_decoration_none" href="/">Back</a></button>
+                </form>
+            </div>
+        </div> 
+    </body>
+    <script>
+        var isbnInput = document.getElementById("newBookIsbn");
+        isbnInput.addEventListener('input', function() {
+            var isbnInputValue = isbnInput.value;
+            var isbnNumbersOnly = isbnInputValue.replace(/[^0-9]/g, '');
+            isbnInput.value = isbnNumbersOnly;
+        });
+    </script>
+</html>
